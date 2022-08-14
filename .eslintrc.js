@@ -4,6 +4,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
     "prettier",
+    "plugin:tailwindcss/recommended",
   ],
   rules: {
     // ブロックの中括弧（{}）を省略しない
