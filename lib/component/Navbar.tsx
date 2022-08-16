@@ -6,6 +6,7 @@ import {
 } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
+import { DrawerNavMenu } from ".";
 
 export const Navbar = (props: { opened: boolean }) => {
   const theme = useMantineTheme();
@@ -19,66 +20,10 @@ export const Navbar = (props: { opened: boolean }) => {
       sx={{ backgroundColor: theme.colors.pink[6], border: "none" }}
     >
       <Stack>
-        <Link href="/#" passHref>
-          <Anchor
-            component="a"
-            underline={false}
-            sx={{
-              color: "#fff",
-              fontSize: 28,
-              fontWeight: 700,
-              fontFamily: "Avenir Next, sans-serif",
-              lineHeight: "38px",
-            }}
-          >
-            About
-          </Anchor>
-        </Link>
-        <Link href="/#" passHref>
-          <Anchor
-            component="a"
-            underline={false}
-            sx={{
-              color: "#fff",
-              fontSize: 28,
-              fontWeight: 700,
-              fontFamily: "Avenir Next, sans-serif",
-              lineHeight: "38px",
-            }}
-          >
-            Blog
-          </Anchor>
-        </Link>
-        <Link href="/" passHref>
-          <Anchor
-            component="a"
-            underline={false}
-            sx={{
-              color: "#fff",
-              fontSize: 28,
-              fontWeight: 700,
-              fontFamily: "Avenir Next, sans-serif",
-              lineHeight: "38px",
-            }}
-          >
-            Portfolio
-          </Anchor>
-        </Link>
-        <Link href="/#" passHref>
-          <Anchor
-            component="a"
-            underline={false}
-            sx={{
-              color: "#fff",
-              fontSize: 28,
-              fontWeight: 700,
-              fontFamily: "Avenir Next, sans-serif",
-              lineHeight: "38px",
-            }}
-          >
-            Contact
-          </Anchor>
-        </Link>
+        <DrawerNavMenu href="./about">About</DrawerNavMenu>
+        <DrawerNavMenu href="./blog">Blog</DrawerNavMenu>
+        <DrawerNavMenu href="./portfolio">Portfolio</DrawerNavMenu>
+        <DrawerNavMenu href="./contact">Contact</DrawerNavMenu>
       </Stack>
     </MantineNavbar>
   );
