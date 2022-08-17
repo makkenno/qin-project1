@@ -27,6 +27,7 @@ export const Header = ({
       alignItems: "center",
       backgroundColor: opened ? theme.colors.pink[6] : "",
       borderBottom: opened ? "none" : theme.colors.gray[2],
+      position: "fixed",
     }}
   >
     <Group position="apart" className="w-full">

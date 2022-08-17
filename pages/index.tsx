@@ -1,6 +1,16 @@
 import type { NextPage } from "next";
-import { Layout, SectionTitle } from "lib/component";
-import { Box, Container, Title, Text, Space, Group } from "@mantine/core";
+import { BlogPost, Layout, SectionTitle } from "lib/component";
+import {
+  Box,
+  Container,
+  Title,
+  Text,
+  Space,
+  Group,
+  Stack,
+  Button,
+} from "@mantine/core";
+import { css } from "@emotion/react";
 import { FaTwitter, FaFacebook, FaRss } from "react-icons/fa";
 
 const Home: NextPage = () => {
@@ -22,17 +32,42 @@ const Home: NextPage = () => {
             まきののポートフォリオのためのページです
           </Text>
           <Space h={44} />
-          <Group>
+          <Group spacing="sm">
             <FaTwitter size={18} fill="white" />
             <FaFacebook size={18} fill="white" />
             <FaRss size={18} fill="white" />
           </Group>
         </Container>
       </Box>
-      <Space h={40} />
-      <Container>
+      <Space h="xl" />
+      <Container px="sm">
         <SectionTitle title="Blog" />
-        <Space h={24} />
+        <Space h="md" />
+        <Stack>
+          <BlogPost />
+          <BlogPost />
+          <BlogPost />
+          <BlogPost />
+          <Button
+            color="dark"
+            radius="xl"
+            className="w-min"
+            px={22}
+            mx="auto"
+            styles={{
+              root: {
+                height: 45,
+              },
+              label: {
+                fontWeight: 600,
+                fontSize: 16,
+                lineHeight: "25px",
+              },
+            }}
+          >
+            View All
+          </Button>
+        </Stack>
       </Container>
     </Layout>
   );

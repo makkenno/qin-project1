@@ -22,24 +22,28 @@ export default function App(props: AppProps) {
         theme={{
           /** Put your mantine theme override here */
           colorScheme: "light",
+          spacing: { xs: 8, sm: 16, md: 24, lg: 32, xl: 40 },
           headings: {
+            fontFamily: "Avenir Next, sans-serif",
             sizes: {
               h1: {
-                fontFamily: "Avenir Next, sans-serif",
                 fontSize: 18,
                 lineHeight: "25px",
                 fontWeight: 700,
               },
               h2: {
-                fontFamily: "Avenir Next, sans-serif",
                 fontSize: 28,
                 lineHeight: "38px",
                 fontWeight: 700,
               },
               h3: {
-                fontFamily: "Avenir Next, sans-serif",
                 fontSize: 26,
                 lineHeight: "40px",
+                fontWeight: 700,
+              },
+              h4: {
+                fontSize: 22,
+                lineHeight: "34px",
                 fontWeight: 700,
               },
             },

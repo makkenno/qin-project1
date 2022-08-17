@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import { Container, Space, useMantineTheme } from "@mantine/core";
+import { Space, useMantineTheme } from "@mantine/core";
 import { Navbar, Header, SectionTitle } from "lib/component";
 
 export const Layout = ({ children }: { children?: ReactNode }) => {
@@ -8,6 +8,7 @@ export const Layout = ({ children }: { children?: ReactNode }) => {
   return (
     <>
       <Header opened={opened} theme={theme} setOpened={setOpened} />
+      <Space h={65} />
       <Navbar opened={opened} />
       {children}
     </>
