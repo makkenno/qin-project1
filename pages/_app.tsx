@@ -1,4 +1,4 @@
-import "styles/global.css";
+import "../styles/global.css";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
@@ -31,6 +31,12 @@ export default function App(props: AppProps) {
                 fontWeight: 700,
               },
               h2: {
+                fontFamily: "Avenir Next, sans-serif",
+                fontSize: 28,
+                lineHeight: "38px",
+                fontWeight: 700,
+              },
+              h3: {
                 fontFamily: "Avenir Next, sans-serif",
                 fontSize: 26,
                 lineHeight: "40px",

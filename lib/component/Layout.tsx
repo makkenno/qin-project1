@@ -9,7 +9,7 @@ export const Layout = ({ children }: { children?: ReactNode }) => {
     <>
       <Header opened={opened} theme={theme} setOpened={setOpened} />
       <Navbar opened={opened} />
-      <Container>{children}</Container>
+      {children}
     </>
   );
 };

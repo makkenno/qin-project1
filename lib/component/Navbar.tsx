@@ -1,10 +1,4 @@
-import {
-  Anchor,
-  Navbar as MantineNavbar,
-  Stack,
-  useMantineTheme,
-} from "@mantine/core";
-import Link from "next/link";
+import { Navbar as MantineNavbar, Stack, useMantineTheme } from "@mantine/core";
 import React from "react";
 import { DrawerNavMenu } from ".";
 
