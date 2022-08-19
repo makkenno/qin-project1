@@ -11,7 +11,11 @@ export const Navbar = (props: { opened: boolean }) => {
       hidden={!props.opened}
       width={{ sm: 200, lg: 300 }}
       px={24}
-      sx={{ backgroundColor: theme.colors.pink[6], border: "none" }}
+      sx={{
+        backgroundColor: theme.colors.pink[6],
+        border: "none",
+        position: "fixed",
+      }}
     >
       <Stack>
         <DrawerNavMenu href="./about">About</DrawerNavMenu>
