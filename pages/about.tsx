@@ -9,7 +9,9 @@ const About: NextPage = () => {
       <Space h="xl" />
       <Container
         px="sm"
-        sx={{ height: `calc(100vh - ${headerHeight}px - ${footerHeight}px)` }}
+        sx={{
+          height: `calc(100vh - ${headerHeight}px - ${footerHeight}px - 40px)`,
+        }}
       >
         <SectionTitle title="About" />
         <Space h="md" />

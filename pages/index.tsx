@@ -11,9 +11,6 @@ import {
 import { FaTwitter, FaFacebook, FaRss } from "react-icons/fa";
 import {
   Layout,
-  SectionTitle,
-  Button,
-  Tweet,
   BlogSection,
   PortfolioSection,
   GithubSection,
