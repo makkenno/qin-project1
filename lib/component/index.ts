@@ -6,3 +6,5 @@ export { DrawerNavMenu } from "./DrawerNavMenu";
 export { BlogPost } from "./BlogPost";
 export { Button } from "./Button";
 export { Portfolio } from "./Portfolio";
+export { Repository } from "./Repository";
+export { Tweet } from "./Tweet";
