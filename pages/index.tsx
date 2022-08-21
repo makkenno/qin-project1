@@ -95,6 +95,7 @@ const Home: NextPage = () => {
           </Stack>
         </Container>
       </Stack>
+      <Space h={60} />
     </Layout>
   );
 };

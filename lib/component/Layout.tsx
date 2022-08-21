@@ -1,6 +1,5 @@
 import { ReactNode, useState } from "react";
 import {
-  Space,
   useMantineTheme,
   Footer,
   Container,
@@ -15,10 +14,8 @@ export const Layout = ({ children }: { children?: ReactNode }) => {
   return (
     <>
       <Header opened={opened} theme={theme} setOpened={setOpened} />
-      <Space h={65} />
       <Navbar opened={opened} />
       {children}
-      <Space h={60} />
       <Footer
         children={
           <Container
