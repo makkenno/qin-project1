@@ -6,11 +6,11 @@ import { headerHeight, footerHeight } from "lib/const";
 const About: NextPage = () => {
   return (
     <Layout>
+      <Space h="xl" />
       <Container
         px="sm"
         sx={{ height: `calc(100vh - ${headerHeight}px - ${footerHeight}px)` }}
       >
-        <Space h="xl" />
         <SectionTitle title="About" />
         <Space h="md" />
         <Text

@@ -8,3 +8,7 @@ export { Button } from "./Button";
 export { Portfolio } from "./Portfolio";
 export { Repository } from "./Repository";
 export { Tweet } from "./Tweet";
+export { BlogSection } from "./BlogSection";
+export { PortfolioSection } from "./PortfolioSection";
+export { GithubSection } from "./GithubSection";
+export { TwitterSection } from "./TwitterSection";
