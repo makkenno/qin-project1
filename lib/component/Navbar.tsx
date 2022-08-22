@@ -1,6 +1,6 @@
 import { Navbar as MantineNavbar, Stack, useMantineTheme } from "@mantine/core";
 import React from "react";
-import { DrawerNavMenu } from ".";
+import { NavMenu } from ".";
 import { headerHeight } from "lib/const";
 
 export const Navbar = (props: { opened: boolean }) => {
@@ -20,10 +20,10 @@ export const Navbar = (props: { opened: boolean }) => {
       }}
     >
       <Stack>
-        <DrawerNavMenu href="./about">About</DrawerNavMenu>
-        <DrawerNavMenu href="./blog">Blog</DrawerNavMenu>
-        <DrawerNavMenu href="./portfolio">Portfolio</DrawerNavMenu>
-        <DrawerNavMenu href="./contact">Contact</DrawerNavMenu>
+        <NavMenu href="./about">About</NavMenu>
+        <NavMenu href="./blog">Blog</NavMenu>
+        <NavMenu href="./portfolio">Portfolio</NavMenu>
+        <NavMenu href="./contact">Contact</NavMenu>
       </Stack>
     </MantineNavbar>
   );
