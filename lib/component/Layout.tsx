@@ -6,15 +6,17 @@ import {
   Center,
   Text,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { Navbar, Header } from "lib/component";
 
 export const Layout = ({ children }: { children?: ReactNode }) => {
   const theme = useMantineTheme();
+  const matches = useMediaQuery("(max-width: 768px)");
   const [opened, setOpened] = useState(false);
   return (
     <>
       <Header opened={opened} theme={theme} setOpened={setOpened} />
-      <Navbar opened={opened} />
+      {matches && <Navbar opened={opened} />}
       {children}
       <Footer
         children={
@@ -22,6 +24,8 @@ export const Layout = ({ children }: { children?: ReactNode }) => {
             px="sm"
             sx={{
               height: "100%",
+              width: "100%",
+              maxWidth: 1440,
             }}
           >
             <Center

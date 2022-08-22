@@ -1,9 +1,9 @@
-import { Container, Space, Stack } from "@mantine/core";
-import { SectionTitle, Repository, Button } from ".";
+import { Space, Stack } from "@mantine/core";
+import { SectionTitle, Repository, Button, Container } from ".";
 
 export const GithubSection = () => {
   return (
-    <Container px="sm" className="w-full">
+    <Container>
       <SectionTitle title="GitHub" />
       <Space h="md" />
       <Stack spacing="xl">

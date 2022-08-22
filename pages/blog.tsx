@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
-import { Space, Container, Stack, Loader, Center } from "@mantine/core";
-import { Layout, SectionTitle, BlogPost } from "lib/component";
+import { Space, Stack, Loader, Center } from "@mantine/core";
+import { Layout, SectionTitle, BlogPost, Container } from "lib/component";
 
 const Blog: NextPage = () => {
   return (
     <Layout>
       <Space h="xl" />
-      <Container px="sm" className="w-full">
+      <Container>
         <SectionTitle title="Blog" />
         <Space h="md" />
         <Stack>

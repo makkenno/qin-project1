@@ -1,9 +1,9 @@
-import { Container, Space, Stack } from "@mantine/core";
-import { SectionTitle, BlogPost, Button } from ".";
+import { Space, Stack } from "@mantine/core";
+import { SectionTitle, BlogPost, Button, Container } from ".";
 
 export const BlogSection = () => {
   return (
-    <Container px="sm" className="w-full">
+    <Container>
       <SectionTitle title="Blog" />
       <Space h="md" />
       <Stack>

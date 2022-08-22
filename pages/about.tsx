@@ -1,18 +1,13 @@
 import type { NextPage } from "next";
-import { Container, Space, Text } from "@mantine/core";
-import { Layout, SectionTitle } from "lib/component";
+import { Space, Text } from "@mantine/core";
+import { Layout, SectionTitle, Container } from "lib/component";
 import { headerHeight, footerHeight } from "lib/const";
 
 const About: NextPage = () => {
   return (
     <Layout>
       <Space h="xl" />
-      <Container
-        px="sm"
-        sx={{
-          height: `calc(100vh - ${headerHeight}px - ${footerHeight}px - 40px)`,
-        }}
-      >
+      <Container>
         <SectionTitle title="About" />
         <Space h="md" />
         <Text

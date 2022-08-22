@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
-import { Space, Container, Stack } from "@mantine/core";
+import { Space, Stack } from "@mantine/core";
 import {
   Layout,
   SectionTitle,
+  Container,
   Portfolio as PortfolioComponent,
 } from "lib/component";
 
@@ -10,7 +11,7 @@ const Portfolio: NextPage = () => {
   return (
     <Layout>
       <Space h="xl" />
-      <Container px="sm" className="w-full">
+      <Container>
         <SectionTitle title="Portfolio" />
         <Space h="md" />
         <Stack spacing="xl">

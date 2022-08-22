@@ -1,13 +1,5 @@
 import type { NextPage } from "next";
-import {
-  Box,
-  Container,
-  Title,
-  Text,
-  Space,
-  Group,
-  Stack,
-} from "@mantine/core";
+import { Box, Title, Text, Space, Group, Stack } from "@mantine/core";
 import { FaTwitter, FaFacebook, FaRss } from "react-icons/fa";
 import {
   Layout,
@@ -15,6 +7,7 @@ import {
   PortfolioSection,
   GithubSection,
   TwitterSection,
+  Container,
 } from "lib/component";
 
 const Home: NextPage = () => {

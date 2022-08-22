@@ -12,3 +12,4 @@ export { BlogSection } from "./BlogSection";
 export { PortfolioSection } from "./PortfolioSection";
 export { GithubSection } from "./GithubSection";
 export { TwitterSection } from "./TwitterSection";
+export { Container } from "./Container";

@@ -1,9 +1,9 @@
-import { Container, Space, Stack } from "@mantine/core";
-import { SectionTitle, Tweet, Button } from ".";
+import { Space, Stack } from "@mantine/core";
+import { SectionTitle, Tweet, Button, Container } from ".";
 
 export const TwitterSection = () => {
   return (
-    <Container px="sm" className="w-full">
+    <Container>
       <SectionTitle title="Twitter" />
       <Space h="md" />
       <Stack spacing={56}>
