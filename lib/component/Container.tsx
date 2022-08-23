@@ -8,7 +8,7 @@ export const Container = ({ children }: { children: ReactNode }) => {
     <MantineContainer
       px="sm"
       sx={(theme) => ({
-        minHeight: `calc(100vh - ${headerHeight}px - ${footerHeight}px - 40px)`,
+        // minHeight: `calc(100vh - ${headerHeight}px - ${footerHeight}px - 40px)`,
         maxWidth: 1000 - theme.spacing.sm * 2,
       })}
       className="w-full"
