@@ -38,9 +38,9 @@ export const Header = ({
         <Group
           position="apart"
           className="w-full"
-          sx={(theme) => ({ maxWidth: 1000 - theme.spacing.sm * 2 })}
+          sx={(theme) => ({ maxWidth: 1000 + theme.spacing.sm * 2 })}
           m="auto"
-          px={16}
+          px="sm"
         >
           {matches && (
             <Burger
