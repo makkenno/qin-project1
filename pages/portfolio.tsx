@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
-import { Space, Stack } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
+import { Grid, Space } from "@mantine/core";
 import {
   Layout,
   SectionTitle,
@@ -8,18 +9,34 @@ import {
 } from "lib/component";
 
 const Portfolio: NextPage = () => {
+  const matches = useMediaQuery("(max-width: 768px)");
+
   return (
     <Layout>
       <Space h="xl" />
       <Container>
         <SectionTitle title="Portfolio" />
         <Space h="md" />
-        <Stack spacing="xl">
-          <PortfolioComponent />
-          <PortfolioComponent />
-          <PortfolioComponent />
-          <PortfolioComponent />
-        </Stack>
+        <Grid gutter="md">
+          <Grid.Col span={matches ? 12 : 4}>
+            <PortfolioComponent />
+          </Grid.Col>
+          <Grid.Col span={matches ? 12 : 4}>
+            <PortfolioComponent />
+          </Grid.Col>
+          <Grid.Col span={matches ? 12 : 4}>
+            <PortfolioComponent />
+          </Grid.Col>
+          <Grid.Col span={matches ? 12 : 4}>
+            <PortfolioComponent />
+          </Grid.Col>
+          <Grid.Col span={matches ? 12 : 4}>
+            <PortfolioComponent />
+          </Grid.Col>
+          <Grid.Col span={matches ? 12 : 4}>
+            <PortfolioComponent />
+          </Grid.Col>
+        </Grid>
       </Container>
       <Space h={80} />
     </Layout>

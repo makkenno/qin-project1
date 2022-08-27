@@ -5,9 +5,11 @@ import {
   Container,
   Center,
   Text,
+  Box,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { Navbar, Header } from "lib/component";
+import { headerHeight, footerHeight } from "lib/const";
 
 export const Layout = ({ children }: { children?: ReactNode }) => {
   const theme = useMantineTheme();
@@ -17,7 +19,13 @@ export const Layout = ({ children }: { children?: ReactNode }) => {
     <>
       <Header opened={opened} theme={theme} setOpened={setOpened} />
       {matches && <Navbar opened={opened} />}
-      {children}
+      <Box
+        sx={{
+          minHeight: `calc(100vh - ${headerHeight}px - ${footerHeight}px)`,
+        }}
+      >
+        {children}
+      </Box>
       <Footer
         children={
           <Container

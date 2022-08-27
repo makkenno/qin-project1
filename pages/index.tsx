@@ -54,8 +54,10 @@ const Home: NextPage = () => {
       <Stack spacing={60}>
         <BlogSection />
         <PortfolioSection />
-        <GithubSection />
-        <TwitterSection />
+        <Group>
+          <GithubSection />
+          <TwitterSection />
+        </Group>
       </Stack>
       <Space h={60} />
     </Layout>
