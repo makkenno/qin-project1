@@ -1,5 +1,14 @@
 import type { NextPage } from "next";
-import { Box, Title, Text, Space, Group, Stack, Center } from "@mantine/core";
+import {
+  Box,
+  Title,
+  Text,
+  Space,
+  Group,
+  Stack,
+  MediaQuery,
+  useMantineTheme,
+} from "@mantine/core";
 import { FaTwitter, FaFacebook, FaRss } from "react-icons/fa";
 import {
   Layout,
@@ -13,6 +22,7 @@ import { useMediaQuery } from "@mantine/hooks";
 
 const Home: NextPage = () => {
   const matches = useMediaQuery("(max-width: 768px)");
+  const theme = useMantineTheme;
   return (
     <Layout>
       <Box sx={(theme) => ({ background: theme.colors.pink[6], height: 248 })}>
@@ -54,10 +64,20 @@ const Home: NextPage = () => {
       <Stack spacing={60}>
         <BlogSection />
         <PortfolioSection />
-        <Group>
-          <GithubSection />
-          <TwitterSection />
-        </Group>
+        <MediaQuery
+          query="(min-width: 768px)"
+          styles={{
+            alignItems: "flex-start",
+            flexWrap: "nowrap",
+            maxWidth: 1000 + 16 * 2,
+            margin: "0 auto",
+          }}
+        >
+          <Group>
+            <GithubSection />
+            <TwitterSection />
+          </Group>
+        </MediaQuery>
       </Stack>
       <Space h={60} />
     </Layout>
