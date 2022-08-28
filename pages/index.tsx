@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import {
   Box,
   Title,
@@ -7,7 +7,6 @@ import {
   Group,
   Stack,
   MediaQuery,
-  useMantineTheme,
 } from "@mantine/core";
 import { FaTwitter, FaFacebook, FaRss } from "react-icons/fa";
 import {
@@ -18,11 +17,13 @@ import {
   TwitterSection,
   Container,
 } from "lib/component";
+import { Blog } from "lib/type";
+import { client } from "lib/client";
 import { useMediaQuery } from "@mantine/hooks";
+import { MicroCMSListResponse } from "microcms-js-sdk";
 
-const Home: NextPage = () => {
+const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
   const matches = useMediaQuery("(max-width: 768px)");
-  const theme = useMantineTheme;
   return (
     <Layout>
       <Box sx={(theme) => ({ background: theme.colors.pink[6], height: 248 })}>
@@ -62,7 +63,7 @@ const Home: NextPage = () => {
       </Box>
       <Space h="xl" />
       <Stack spacing={60}>
-        <BlogSection />
+        <BlogSection blogs={props} />
         <PortfolioSection />
         <MediaQuery
           query="(min-width: 768px)"
@@ -84,4 +85,12 @@ const Home: NextPage = () => {
   );
 };
 
+export const getStaticProps: GetStaticProps<
+  MicroCMSListResponse<Blog>
+> = async () => {
+  const data = await client.getList({ endpoint: "blogs" });
+  return {
+    props: data,
+  };
+};
 export default Home;

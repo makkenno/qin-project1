@@ -1,13 +1,15 @@
 import { Stack, Text } from "@mantine/core";
+import { Blog } from "lib/type";
+import { formatDate } from "lib/util";
 
-export const BlogPost = () => (
+export const BlogPost = (props: Blog) => (
   <Stack spacing="xs">
     <Text
       size={22}
       weight={700}
       sx={{ lineHeight: "34px", fontFamily: "YuGothic" }}
     >
-      This is a header
+      {props.title}
     </Text>
     <Text
       size={16}
@@ -21,17 +23,15 @@ export const BlogPost = () => (
         WebkitLineClamp: 2,
         overflow: "hidden",
       }}
-    >
-      Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-      Velit officia consequat duis enim velit mollit.
-    </Text>
+      dangerouslySetInnerHTML={{ __html: props.content }}
+    ></Text>
     <Text
       color="dark.2"
       size={12}
       weight={700}
       sx={{ fontFamily: "Avenir Next, sans-serif", lineHeight: "19px" }}
     >
-      2022.07.11
+      {formatDate(props.publishedAt)}
     </Text>
   </Stack>
 );

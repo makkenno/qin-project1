@@ -1,5 +1,5 @@
 import { Group, Avatar, Stack, Text, Anchor } from "@mantine/core";
-import { textToLink } from "lib/function";
+import { textToLink } from "lib/util";
 
 export const Tweet = () => {
   const comment = `📣 新サービス「Noway Form」をリリースしました！

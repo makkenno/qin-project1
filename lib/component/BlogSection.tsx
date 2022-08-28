@@ -1,16 +1,15 @@
 import { Space, Stack } from "@mantine/core";
-import { SectionTitle, BlogPost, Button, Container } from ".";
+import { MicroCMSListResponse } from "microcms-js-sdk";
+import { Blog } from "lib/type";
+import { SectionTitle, Button, Container, BlogPosts } from ".";
 
-export const BlogSection = () => {
+export const BlogSection = (props: { blogs: MicroCMSListResponse<Blog> }) => {
   return (
     <Container>
       <SectionTitle title="Blog" />
       <Space h="md" />
       <Stack>
-        <BlogPost />
-        <BlogPost />
-        <BlogPost />
-        <BlogPost />
+        <BlogPosts blogs={props.blogs} />
         <Button>View All</Button>
       </Stack>
     </Container>

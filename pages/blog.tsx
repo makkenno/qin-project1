@@ -1,9 +1,11 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { Space, Stack, Loader, Center } from "@mantine/core";
-import { Layout, SectionTitle, BlogPost, Container } from "lib/component";
-import { headerHeight, footerHeight } from "lib/const";
+import type { Blog as BlogType } from "lib/type";
+import { Layout, SectionTitle, Container, BlogPosts } from "lib/component";
+import { client } from "lib/client";
+import { MicroCMSListResponse } from "microcms-js-sdk";
 
-const Blog: NextPage = () => {
+const Blog: NextPage<MicroCMSListResponse<BlogType>> = (props) => {
   return (
     <Layout>
       <Space h="xl" />
@@ -11,16 +13,7 @@ const Blog: NextPage = () => {
         <SectionTitle title="Blog" />
         <Space h="md" />
         <Stack>
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
-          <BlogPost />
+          <BlogPosts blogs={props} />
           <Center>
             <Loader />
           </Center>
@@ -29,6 +22,15 @@ const Blog: NextPage = () => {
       </Container>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps<
+  MicroCMSListResponse<BlogType>
+> = async () => {
+  const data = await client.getList({ endpoint: "blogs" });
+  return {
+    props: data,
+  };
 };
 
 export default Blog;
