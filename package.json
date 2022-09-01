@@ -15,14 +15,18 @@
     "@mantine/hooks": "^5.1.5",
     "@mantine/next": "^5.1.5",
     "@tabler/icons": "^1.82.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "autoprefixer": "^10.4.8",
     "dayjs": "^1.11.5",
+    "eslint-plugin-import": "^2.26.0",
     "microcms-js-sdk": "^2.2.1",
     "next": "12.2.5",
     "postcss": "^8.4.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
@@ -32,7 +36,10 @@
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tailwindcss": "^3.6.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.7.1",
     "typescript": "4.7.4"
   }

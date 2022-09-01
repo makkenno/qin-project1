@@ -1,3 +1,5 @@
+const { off } = require("process");
+
 module.exports = {
   plugins: ["simple-import-sort", "unused-imports", "sort-destructure-keys"],
   extends: [
@@ -35,6 +37,7 @@ module.exports = {
     "react/destructuring-assignment": ["error", "always"],
 
     /* import 系 */
+    "sort-imports": 0,
     // インポート時に改行を強制
     "import/newline-after-import": "error",
     // デフォルトエクスポートを禁止
@@ -45,7 +48,6 @@ module.exports = {
     "simple-import-sort/exports": "error",
     // 使用していないインポートを禁止
     "unused-imports/no-unused-imports": "error",
-    // unused-imports を使うために必要？この設定項目の意義ちょっと分かっていない。
     "unused-imports/no-unused-vars": [
       "error",
       {
@@ -69,10 +71,7 @@ module.exports = {
       { prefer: "type-imports" },
     ],
     // 未使用 かつ _ から始まらない変数を禁止
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
-    ],
+    "@typescript-eslint/no-unused-vars": off,
 
     /* other */
     // 分割代入の順序を強制
