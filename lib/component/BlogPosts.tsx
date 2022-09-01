@@ -6,14 +6,7 @@ export const BlogPosts = ({ blogs }: { blogs: MicroCMSListResponse<Blog> }) => {
   return (
     <>
       {blogs.contents.map((blog) => {
-        return (
-          <BlogPost
-            title={blog.title}
-            content={blog.content}
-            publishedAt={blog.publishedAt}
-            key={blog.id}
-          />
-        );
+        return <BlogPost {...blog} key={blog.id} />;
       })}
     </>
   );
