@@ -1,7 +1,12 @@
 const { off } = require("process");
 
 module.exports = {
-  plugins: ["simple-import-sort", "unused-imports", "sort-destructure-keys"],
+  plugins: [
+    "simple-import-sort",
+    "unused-imports",
+    "sort-destructure-keys",
+    "import-access",
+  ],
   extends: [
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
@@ -42,6 +47,8 @@ module.exports = {
     "import/newline-after-import": "error",
     // デフォルトエクスポートを禁止
     "import/no-default-export": "error",
+    "import-access/jsdoc": ["error"],
+
     // インポート順序を強制
     "simple-import-sort/imports": "error",
     // エクスポート順序を強制
