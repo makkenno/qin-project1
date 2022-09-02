@@ -49,6 +49,7 @@ const BlogId: NextPage<Props> = (props) => {
             {formatDate(props.publishedAt)}
           </Text>
           <Text
+            className="prose prose-sm"
             size={16}
             weight={500}
             sx={{

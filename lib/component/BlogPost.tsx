@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Stack, Text } from "@mantine/core";
 import { Blog } from "lib/type";
-import { formatDate } from "lib/util";
+import { formatDate, removeHTMLtag } from "lib/util";
 
 export const BlogPost = (props: Blog) => (
   <Link href={`/blog/${props.id}`} passHref>
@@ -22,7 +22,9 @@ export const BlogPost = (props: Blog) => (
           height: 50,
         }}
         lineClamp={2}
-        dangerouslySetInnerHTML={{ __html: props.content }}
+        dangerouslySetInnerHTML={{
+          __html: removeHTMLtag(props.content),
+        }}
       ></Text>
       <Text
         color="dark.2"
