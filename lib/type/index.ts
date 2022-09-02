@@ -1,7 +1,7 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
 
 export type Blog = {
-  id: number;
+  id: string;
   title: string;
   content: string;
   publishedAt: string;

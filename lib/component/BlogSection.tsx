@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { Anchor, Space, Stack } from "@mantine/core";
-import { MicroCMSListResponse } from "microcms-js-sdk";
-import { Blog } from "lib/type";
+import { Space, Stack } from "@mantine/core";
+import { BlogResponse } from "lib/type";
 import { SectionTitle, Button, Container, BlogPosts } from ".";
 
-// TODO: デフォでブログは4つまで取得
-export const BlogSection = (props: { blogs: MicroCMSListResponse<Blog> }) => {
+export const BlogSection = (props: { blogs: BlogResponse }) => {
   return (
     <Container>
       <SectionTitle title="Blog" />

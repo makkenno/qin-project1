@@ -18,8 +18,6 @@ export const getStaticProps: GetStaticProps<BlogResponse> = async () => {
   };
 };
 
-const limit = 10;
-
 const BlogPage: NextPage<BlogResponse> = (props) => {
   const [items, setItems] = useState<BlogResponse["contents"]>(props.contents);
 

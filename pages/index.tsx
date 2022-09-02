@@ -17,12 +17,15 @@ import {
   TwitterSection,
   Container,
 } from "lib/component";
-import { Blog } from "lib/type";
+import type { BlogResponse, PortfolioResponse } from "lib/type";
 import { client } from "lib/client";
 import { useMediaQuery } from "@mantine/hooks";
-import { MicroCMSListResponse } from "microcms-js-sdk";
 
-const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
+type Props = {
+  blogs: BlogResponse;
+  portfolios: PortfolioResponse;
+};
+const Home: NextPage<Props> = (props) => {
   const matches = useMediaQuery("(max-width: 768px)");
   return (
     <Layout>
@@ -63,8 +66,8 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
       </Box>
       <Space h="xl" />
       <Stack spacing={60}>
-        <BlogSection blogs={props} />
-        <PortfolioSection />
+        <BlogSection blogs={props.blogs} />
+        <PortfolioSection portfolios={props.portfolios} />
         <MediaQuery
           query="(min-width: 768px)"
           styles={{
@@ -85,15 +88,21 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<
-  MicroCMSListResponse<Blog>
-> = async () => {
-  const data = await client.getList({
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const blogs = await client.getList({
     endpoint: "blogs",
     queries: { limit: 4 },
   });
+  const portfolios = await client.getList({
+    endpoint: "portfolio",
+    queries: { limit: 6 },
+  });
+
   return {
-    props: data,
+    props: {
+      blogs: blogs,
+      portfolios: portfolios,
+    },
   };
 };
 export default Home;
