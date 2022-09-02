@@ -8,3 +8,13 @@ export type Blog = {
 };
 
 export type BlogResponse = MicroCMSListResponse<Blog>;
+
+export type PortfolioType = {
+  id: string;
+  title: string;
+  description: string;
+  image: { url: string; height: number; width: number };
+  publishedAt: string;
+};
+
+export type PortfolioResponse = MicroCMSListResponse<PortfolioType>;

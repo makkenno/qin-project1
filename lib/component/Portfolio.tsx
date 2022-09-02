@@ -1,21 +1,18 @@
 import { Box, Space, Image, Text } from "@mantine/core";
-import { SectionTitle } from "./SectionTitle";
+import { PortfolioType } from "lib/type";
+import { formatDate } from "lib/util";
 
-export const Portfolio = (): JSX.Element => {
+export const Portfolio = (props: PortfolioType): JSX.Element => {
   return (
     <Box>
-      <Image
-        height={184}
-        fit="cover"
-        src="https://dummyimage.com/1440x184/000000/fff"
-      />
+      <Image height={184} fit="cover" src={props.image.url} />
       <Space h="sm" />
       <Text
         size={22}
         weight={700}
         sx={{ lineHeight: "34px", fontFamily: "YuGothic" }}
       >
-        IT KINGDOM
+        {props.title}
       </Text>
       <Space h="xs" />
       <Text
@@ -26,7 +23,7 @@ export const Portfolio = (): JSX.Element => {
           fontFamily: "YuGothic",
         }}
       >
-        当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。
+        {props.description}
       </Text>
       <Space h="xs" />
       <Text
@@ -38,7 +35,7 @@ export const Portfolio = (): JSX.Element => {
           lineHeight: "19px",
         }}
       >
-        2021.10 - 2021.12
+        {formatDate(props.publishedAt)}
       </Text>
     </Box>
   );
