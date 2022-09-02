@@ -1,8 +1,12 @@
-import type { ReactNode } from "react";
-import { Button as MantineButton } from "@mantine/core";
+import { cloneElement, forwardRef, ReactNode } from "react";
+import { Button as MantineButton, ButtonProps } from "@mantine/core";
+import type { PolymorphicComponentProps } from "@mantine/utils";
 
-export const Button = ({ children }: { children: ReactNode }) => {
-  return (
+export const Button = forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  PolymorphicComponentProps<"button" | "a", ButtonProps>
+>(({ ...props }, ref) => {
+  return cloneElement(
     <MantineButton
       color="dark"
       radius="xl"
@@ -19,8 +23,10 @@ export const Button = ({ children }: { children: ReactNode }) => {
           lineHeight: "25px",
         },
       }}
-    >
-      {children}
-    </MantineButton>
+    />,
+    {
+      ref,
+      ...props,
+    }
   );
-};
+});
