@@ -19,6 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "autoprefixer": "^10.4.8",
+    "axios": "^0.27.2",
     "dayjs": "^1.11.5",
     "eslint-plugin-import": "^2.26.0",
     "microcms-js-sdk": "^2.2.1",

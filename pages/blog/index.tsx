@@ -1,33 +1,64 @@
 import type { GetStaticProps, NextPage } from "next";
-import { Space, Stack } from "@mantine/core";
+import { Center, Loader, Space, Stack } from "@mantine/core";
 
 import { Layout, SectionTitle, Container, BlogPosts } from "lib/component";
 import { client } from "lib/client";
 import { Blog, BlogResponse } from "lib/type";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { useMemo, useState } from "react";
+import axios from "axios";
 
 export const getStaticProps: GetStaticProps<BlogResponse> = async () => {
-  const data = await client.getList<Blog>({ endpoint: "blogs" });
+  const data = await client.getList<Blog>({
+    endpoint: "blogs",
+    queries: { limit: 10 },
+  });
   return {
     props: data,
   };
 };
 
-// TODO: ブログ個別ページに飛べるようにする
-// TODO: infinitescrollを実装する→useSWRinfinite？
-const Blog: NextPage<BlogResponse> = (props) => {
+const limit = 10;
+
+const BlogPage: NextPage<BlogResponse> = (props) => {
+  const [items, setItems] = useState<BlogResponse["contents"]>(props.contents);
+
+  const hasMore =
+    props.totalCount > items.length || props.totalCount !== items.length;
+
+  const fetchBlog = async () => {
+    const { data } = await axios.get<BlogResponse>("/api/blog", {
+      params: {
+        offset: items.length,
+      },
+    });
+
+    setItems([...items, ...data.contents]);
+  };
   return (
     <Layout>
       <Space h="xl" />
-      <Container>
-        <SectionTitle title="Blog" />
-        <Space h="md" />
-        <Stack>
-          <BlogPosts blogs={props} />
-          <Space h="lg" />
-        </Stack>
-      </Container>
+      <InfiniteScroll
+        next={fetchBlog}
+        loader={
+          <Center>
+            <Loader />
+          </Center>
+        }
+        dataLength={items.length}
+        hasMore={hasMore}
+      >
+        <Container>
+          <SectionTitle title="Blog" />
+          <Space h="md" />
+          <Stack>
+            <BlogPosts items={items} />
+            <Space h="lg" />
+          </Stack>
+        </Container>
+      </InfiniteScroll>
     </Layout>
   );
 };
 
-export default Blog;
+export default BlogPage;

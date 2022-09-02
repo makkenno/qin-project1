@@ -11,7 +11,7 @@ export const BlogSection = (props: { blogs: MicroCMSListResponse<Blog> }) => {
       <SectionTitle title="Blog" />
       <Space h="md" />
       <Stack>
-        <BlogPosts blogs={props.blogs} />
+        <BlogPosts items={props.blogs.contents} />
         <Link href="./blog" passHref>
           <Button component="a">View All</Button>
         </Link>
