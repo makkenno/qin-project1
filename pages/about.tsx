@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { Space, Text } from "@mantine/core";
 import { Layout, SectionTitle, Container } from "lib/component";
-import { headerHeight, footerHeight } from "lib/const";
 
 const About: NextPage = () => {
   return (

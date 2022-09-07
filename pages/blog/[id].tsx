@@ -15,7 +15,6 @@ export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
   context
 ) => {
