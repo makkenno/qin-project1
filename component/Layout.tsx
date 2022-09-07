@@ -8,7 +8,7 @@ import {
   Box,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { Navbar, Header } from "lib/component";
+import { Navbar, Header } from "component";
 import { headerHeight, footerHeight } from "lib/const";
 
 export const Layout = ({ children }: { children?: ReactNode }) => {

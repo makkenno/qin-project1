@@ -1,6 +1,6 @@
 import { Center, Grid, Space } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { PortfolioResponse } from "lib/type";
+import { PortfolioResponse } from "type";
 import Link from "next/link";
 import { Portfolio, SectionTitle, Button, Container } from ".";
 

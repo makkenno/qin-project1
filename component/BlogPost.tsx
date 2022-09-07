@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Stack, Text } from "@mantine/core";
-import { Blog } from "lib/type";
+import { Blog } from "type";
 import { formatDate, removeHTMLtag } from "lib/util";
 
 export const BlogPost = (props: Blog) => (

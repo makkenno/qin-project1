@@ -1,8 +1,8 @@
 import { Space, Stack, Text } from "@mantine/core";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { Container, Layout, SectionTitle } from "lib/component";
+import { Container, Layout, SectionTitle } from "component";
 import { client } from "lib/client";
-import { Blog, BlogResponse } from "lib/type";
+import { Blog, BlogResponse } from "type";
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { formatDate } from "lib/util";
 

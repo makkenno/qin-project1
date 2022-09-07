@@ -1,11 +1,11 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Center, Loader, Space, Stack } from "@mantine/core";
 
-import { Layout, SectionTitle, Container, BlogPosts } from "lib/component";
+import { Layout, SectionTitle, Container, BlogPosts } from "component";
 import { client } from "lib/client";
-import { Blog, BlogResponse } from "lib/type";
+import { Blog, BlogResponse } from "type";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export const getStaticProps: GetStaticProps<BlogResponse> = async () => {

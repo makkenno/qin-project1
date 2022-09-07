@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { Space, Stack, TextInput, Textarea } from "@mantine/core";
-import { Layout, SectionTitle, Button, Container } from "lib/component";
-import { headerHeight, footerHeight } from "lib/const";
+import { Layout, SectionTitle, Button, Container } from "component";
 
 const Contact: NextPage = () => {
   return (

@@ -1,8 +1,8 @@
 import type { GetStaticProps, NextPage } from "next";
 import { useMediaQuery } from "@mantine/hooks";
 import { Grid, Space } from "@mantine/core";
-import { Layout, SectionTitle, Container, Portfolio } from "lib/component";
-import { PortfolioResponse, PortfolioType } from "lib/type";
+import { Layout, SectionTitle, Container, Portfolio } from "component";
+import { PortfolioResponse, PortfolioType } from "type";
 import { client } from "lib/client";
 
 export const getStaticProps: GetStaticProps<PortfolioResponse> = async () => {

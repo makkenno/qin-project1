@@ -16,8 +16,8 @@ import {
   GithubSection,
   TwitterSection,
   Container,
-} from "lib/component";
-import type { BlogResponse, PortfolioResponse } from "lib/type";
+} from "component";
+import type { BlogResponse, PortfolioResponse } from "type";
 import { client } from "lib/client";
 import { useMediaQuery } from "@mantine/hooks";
 

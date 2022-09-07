@@ -1,5 +1,5 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
-import type { Blog, BlogResponse } from "lib/type";
+import type { Blog } from "type";
 import { BlogPost } from ".";
 
 export const BlogPosts = ({

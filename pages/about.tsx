@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Space, Text } from "@mantine/core";
-import { Layout, SectionTitle, Container } from "lib/component";
+import { Layout, SectionTitle, Container } from "component";
 
 const About: NextPage = () => {
   return (

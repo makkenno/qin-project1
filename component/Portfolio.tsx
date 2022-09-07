@@ -1,5 +1,5 @@
 import { Box, Space, Image, Text } from "@mantine/core";
-import { PortfolioType } from "lib/type";
+import { PortfolioType } from "type";
 import { formatDate } from "lib/util";
 
 export const Portfolio = (props: PortfolioType): JSX.Element => {
