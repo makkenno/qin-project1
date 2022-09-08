@@ -1,4 +1,4 @@
-import { MantineTheme, Space } from "@mantine/core";
+import { MantineTheme, Space, Text } from "@mantine/core";
 import {
   Header as MantineHeader,
   Title,
@@ -52,7 +52,9 @@ export const Header = ({
           {!opened && (
             <>
               <Link href="/" passHref>
-                <Title order={1}>Makino Portfolio</Title>
+                <Text component="a">
+                  <Title order={1}>Makino Portfolio</Title>
+                </Text>
               </Link>
               <Group spacing="sm">
                 {!matches && (
