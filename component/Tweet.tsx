@@ -1,17 +1,18 @@
 import { Group, Avatar, Stack, Text, Anchor } from "@mantine/core";
-import { textToLink } from "lib/util";
+import { formatDate, textToLink } from "lib/util";
 
-export const Tweet = () => {
-  const comment = `📣 新サービス「Noway Form」をリリースしました！
-          
-Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogleFormsでやっていたことがNotionだけで完結します✌✨
+type Props = {
+  name: string;
+  username: string;
+  tweetContent: string;
+  profileImageUrl: string;
+  createdAt: string;
+};
 
-試しに使っていただけると幸いです😊 
-  
-https://www.noway-form.com/ja`;
+export const Tweet = (props: Props) => {
   return (
     <Group spacing="sm" align="flex-start" noWrap>
-      <Avatar radius="xl" />
+      <Avatar radius="xl" src={props.profileImageUrl} />
       <Stack spacing={4}>
         <Group spacing="xs" align="center">
           <Text
@@ -20,7 +21,7 @@ https://www.noway-form.com/ja`;
             color="dark.6"
             sx={{ fontFamily: "Open Sans", lineHeight: "25px" }}
           >
-            まきの
+            {props.name}
           </Text>
           <Text
             weight={700}
@@ -28,7 +29,7 @@ https://www.noway-form.com/ja`;
             color="dark.2"
             sx={{ fontFamily: "Open Sans", lineHeight: "25px" }}
           >
-            @makino・5月25日
+            @{props.username}・{formatDate(props.createdAt)}
           </Text>
         </Group>
         <Text
@@ -36,7 +37,7 @@ https://www.noway-form.com/ja`;
           size={14}
           sx={{ lineHeight: "22px", whiteSpace: "pre-wrap" }}
           dangerouslySetInnerHTML={{
-            __html: textToLink(comment),
+            __html: textToLink(props.tweetContent),
           }}
         ></Text>
       </Stack>
