@@ -20,10 +20,10 @@ export const Navbar = (props: { opened: boolean }) => {
       }}
     >
       <Stack>
-        <NavMenu href="./about">About</NavMenu>
-        <NavMenu href="./blog">Blog</NavMenu>
-        <NavMenu href="./portfolio">Portfolio</NavMenu>
-        <NavMenu href="./contact">Contact</NavMenu>
+        <NavMenu href="/about">About</NavMenu>
+        <NavMenu href="/blog">Blog</NavMenu>
+        <NavMenu href="/portfolio">Portfolio</NavMenu>
+        <NavMenu href="/contact">Contact</NavMenu>
       </Stack>
     </MantineNavbar>
   );
