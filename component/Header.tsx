@@ -59,10 +59,10 @@ export const Header = ({
               <Group spacing="sm">
                 {!matches && (
                   <>
-                    <NavMenu href="./about">About</NavMenu>
-                    <NavMenu href="./blog">Blog</NavMenu>
-                    <NavMenu href="./portfolio">Portfolio</NavMenu>
-                    <NavMenu href="./contact">Contact</NavMenu>
+                    <NavMenu href="/about">About</NavMenu>
+                    <NavMenu href="/blog">Blog</NavMenu>
+                    <NavMenu href="/portfolio">Portfolio</NavMenu>
+                    <NavMenu href="/contact">Contact</NavMenu>
                   </>
                 )}
                 <ActionIcon variant="outline" size="lg" radius="md">
